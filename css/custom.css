@@ -1,0 +1,60 @@
+img.rounded {
+  border-radius: 50%;
+}
+
+:root {
+  --md-primary-fg-color:        #411e5a;
+}
+
+[data-md-color-scheme=slate] {
+  --md-typeset-a-color:         #FFB200;
+}
+
+[data-md-color-scheme=default] {
+  --md-typeset-a-color:         #FFB200;
+}
+
+[data-md-color-accent=indigo] {
+  --md-accent-fg-color: #F0462D;
+}
+
+.attention {
+  color: red
+}
+
+.md-header__button.md-logo img, .md-header__button.md-logo svg {
+  height: 3.0rem;
+}
+
+.md-header__button.md-logo {
+  padding: 0.0rem;
+}
+
+.md-nav {
+    line-height: 1.45;
+}
+
+.md-typeset {
+    font-size: .7rem;
+}
+
+.md-typeset h1 {
+    display: none;
+}
+
+.md-typeset h2 {
+    margin-top: 0em;
+    color:   #F0462D
+}
+
+.md-grid {
+    max-width: 66.5rem;
+}
+
+.md-typeset table:not([class]) th {
+    min-width: 1rem;
+}
+
+.md-typeset table:not([class]) td {
+    padding: 0.9375em 1em;
+}
