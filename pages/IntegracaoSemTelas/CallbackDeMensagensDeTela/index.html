@@ -430,6 +430,8 @@
       
         
       
+        
+      
     
     
     
@@ -482,6 +484,27 @@
   
   <span class="md-ellipsis">
     Pagamento Débito
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Pagamento/PagamentoVoucher/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pagamento Voucher
   </span>
   
 
@@ -1069,6 +1092,39 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Parâmetro de saída">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sintaxe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sintaxe
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemplo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplo
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cancelar-operacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cancelar operação
+    </span>
+  </a>
+  
 </li>
         
       </ul>
@@ -1485,6 +1541,39 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Parâmetro de saída">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sintaxe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sintaxe
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemplo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplo
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cancelar-operacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cancelar operação
+    </span>
+  </a>
+  
 </li>
         
       </ul>
@@ -1669,7 +1758,7 @@ O parâmetro de entrada será um objeto JSON indentificando a coleta ou exibiç�
 <td>6</td>
 <td>Coleta</td>
 <td>string</td>
-<td>Apresenta um texto em multiplas linhas</td>
+<td>Apresenta um texto em multiplas linhas <strong>uso futuro</strong></td>
 </tr>
 <tr>
 <td>LIST</td>
@@ -1897,33 +1986,47 @@ O parâmetro de entrada será um objeto JSON indentificando a coleta ou exibiç�
 </tbody>
 </table>
 <h3 id="parametro-de-saida"><strong>Parâmetro de saída</strong></h3>
-<p>Esta informação sempre deve ser retornada independentemente se houve ou não coleta de dados.</p>
-<div class="language-JSon highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="err">userRespo</span><span class="kc">nse</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">i</span><span class="kc">nte</span><span class="err">ger;</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="err">re</span><span class="kc">turn</span><span class="err">Value</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">s</span><span class="kc">tr</span><span class="err">i</span><span class="kc">n</span><span class="err">g;</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="p">}</span>
+<p>Esta informação sempre deve ser retornada independentemente se houve ou não coleta de dados.
+Para retornar a informação deve ser chamado o metodo <strong>response</strong> presente no objeto recebido no callback.</p>
+<h4 id="sintaxe"><strong>Sintaxe</strong></h4>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>    &lt;objCallback&gt;.response(&lt;valorColetado&gt;, &lt;botaoSelecionado&gt;)
 </span></code></pre></div>
-<table>
-<thead>
-<tr>
-<th>Campo</th>
-<th>Tipo</th>
-<th>Descrição</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>userResponse</td>
-<td>integer</td>
-<td>valor referente ao botão pressionado pelo usuario, <strong>0=confirma operação</strong>, <strong>-1=cancela operação</strong>; nas mensagens sem botão o valor deve ser 0</td>
-</tr>
-<tr>
-<td>returnValue</td>
-<td>string</td>
-<td>valor coletado</td>
-</tr>
-</tbody>
-</table>
+Onde:
+<strong>valorColetado:</strong> Deve conter a informação fornecida pelo usuário
+<strong>botaoSelecionado:</strong> Indica se foi pressionado um botão de 'Confirmação (0)' ou 'Cancelamento (-1)'</p>
+<h4 id="exemplo"><strong>Exemplo</strong></h4>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">handleScreenReceived</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">msgCallback</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">Object</span><span class="p">.</span><span class="nx">hasOwn</span><span class="p">(</span><span class="nx">msgCallback</span><span class="p">,</span><span class="s1">&#39;callback&#39;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">        </span><span class="nx">objTela</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">msgCallback</span><span class="p">.</span><span class="nx">callback</span><span class="p">;</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">        </span><span class="nx">objTela</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">msgCallback</span><span class="p">;</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="nx">objTela</span><span class="p">.</span><span class="nx">type</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="nx">callbackType</span><span class="p">.</span><span class="nx">LIST</span><span class="o">:</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="nx">callbackType</span><span class="p">.</span><span class="nx">CURRENCY</span><span class="o">:</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="nx">callbackType</span><span class="p">.</span><span class="nx">AMOUNT</span><span class="o">:</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="nx">callbackType</span><span class="p">.</span><span class="nx">NUMBER</span><span class="o">:</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="nx">callbackType</span><span class="p">.</span><span class="nx">TEXT_BOX</span><span class="o">:</span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="nx">callbackType</span><span class="p">.</span><span class="nx">COMMAND</span><span class="o">:</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="nx">callbackType</span><span class="p">.</span><span class="nx">DATE</span><span class="o">:</span>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="nx">callbackType</span><span class="p">.</span><span class="nx">TITLE</span><span class="o">:</span>
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="nx">callbackType</span><span class="p">.</span><span class="nx">DISPLAY</span><span class="o">:</span>
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="nx">callbackType</span><span class="p">.</span><span class="nx">ACQUIRER</span><span class="o">:</span>
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="nx">callbackType</span><span class="p">.</span><span class="nx">TEXT</span><span class="o">:</span>
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="w">        </span><span class="k">default</span><span class="o">:</span>
+</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="w">            </span><span class="o">&lt;</span><span class="nx">Coletar</span><span class="w"> </span><span class="nx">ou</span><span class="w"> </span><span class="nx">exibir</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">informação</span><span class="w"> </span><span class="nx">solicitada</span><span class="o">&gt;</span>
+</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">response</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="w">              </span><span class="nx">objTela</span><span class="p">.</span><span class="nx">response</span><span class="p">(</span><span class="nx">response</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span>
+</span><span id="__span-3-24"><a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-25"><a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a><span class="w">              </span><span class="nx">objTela</span><span class="p">.</span><span class="nx">response</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mf">1</span><span class="p">);</span><span class="w">       </span><span class="c1">// Retorno cancelando a coleta</span>
+</span><span id="__span-3-26"><a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a><span class="w">            </span><span class="p">}</span>
+</span><span id="__span-3-27"><a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a><span class="w">            </span><span class="k">break</span><span class="p">;</span>
+</span><span id="__span-3-28"><a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-3-29"><a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="cancelar-operacao"><strong>Cancelar operação</strong></h3>
+<p>Para realizar um cancelamento da operação em uma etapa do fluxo onde não há interação com o usuario, que são as mensagens onde o elemento <strong>button</strong> esta definido como <strong>NONE</strong> (exemplo: Solicitação de mensagem display "Aproxime o cartão"), é necessário que seja armazenado o ultimo objeto de callback recebido do WebCheckout. Quando houver a necessidade de cancelar a operação utilizar o método <strong>response</strong> do objeto armazenado para retornar <strong>-1</strong> no atributo <strong>botaoSelecionado</strong>.</p>
 
 
 

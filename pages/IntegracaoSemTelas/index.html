@@ -430,6 +430,8 @@
       
         
       
+        
+      
     
     
     
@@ -482,6 +484,27 @@
   
   <span class="md-ellipsis">
     Pagamento Débito
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Pagamento/PagamentoVoucher/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pagamento Voucher
   </span>
   
 
@@ -1321,9 +1344,10 @@ geral da automação.</p>
 <p>Para que seja possível utilizar as telas da automação em lugar das telas do Paykit ao realizar
 transações com o WebCheckout, deverão ser executados os seguintes procedimentos:</p>
 <ul>
-<li>Desenvolver a função de callback que será executada pelo WebCheckout no momento de interagir com o usuário;</li>
-<li>Registrar a função da callback na chamada do metodo <a href="../RealizandoAutenticacao/">Authenticate</a>. </li>
-<li>Executar as chamadas do WebCheckout conforme definido no documento de integração, ou seja, executando as chamadas para as funções Credito, Debito, etc.</li>
+<li>Desenvolver uma função que ira receber e processar o objeto de callback enviado pelo WebCheckout, ver <a href="CallbackDeMensagensDeTela/#exemplo">exemplo</a> pera melhor entendimento;</li>
+<li>Incluir no objeto <strong>authenticationRequest</strong> descrito na seção <a href="../RealizandoAutenticacao/">Realizando Autenticação</a> o elemento <strong>backgroundInteraction</strong> que deve receber a função criada para processar o objeto de callback;</li>
+<li>Realizar a autenticação do estabelecimento utilizando o metodo <a href="../RealizandoAutenticacao/">Authenticate</a>; </li>
+<li>Executar as chamadas do WebCheckout conforme definido no documento de integração, ou seja, executando as chamadas para as funções Crédito, Débito, etc.</li>
 </ul>
 
 
