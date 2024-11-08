@@ -1449,9 +1449,14 @@
 </span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">         </span><span class="s2">&quot;reducedReceipt&quot;</span><span class="o">:</span><span class="s2">&quot;   REDE STONE - NL 135999900020000\r\n    MAESTRO - **** **** **** 7148\r\n       AUT= 146228 DOC= 146228\r\n             VALOR= 10,00\r\n        CONTROLE= 09542826103&quot;</span>
 </span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="w">      </span><span class="p">},</span>
 </span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="w">      </span><span class="s2">&quot;uniqueSequentialNumber&quot;</span><span class="o">:</span><span class="s2">&quot;146228&quot;</span><span class="p">,</span>
-</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="w">      </span><span class="s2">&quot;requestKey&quot;</span><span class="o">:</span><span class="s2">&quot;identificacao1&quot;</span>
-</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="w">   </span><span class="p">}</span>
-</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="p">}</span>
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="w">      </span><span class="s2">&quot;requestKey&quot;</span><span class="o">:</span><span class="s2">&quot;identificacao1&quot;</span><span class="p">,</span>
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="w">      </span><span class="s2">&quot;companyCode&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span>
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="w">      </span><span class="s2">&quot;storeCode&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">1121</span><span class="p">,</span><span class="w"> </span>
+</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="w">      </span><span class="s2">&quot;equipmentCode&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">700</span><span class="p">,</span><span class="w"> </span>
+</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="w">      </span><span class="s2">&quot;acquirerID&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;01425787000104&quot;</span><span class="p">,</span><span class="w"> </span>
+</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="w">      </span><span class="s2">&quot;prepaydCard&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot; &quot;</span>
+</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="w">   </span><span class="p">}</span>
+</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="p">}</span>
 </span></code></pre></div>
 <h3 id="respostas-de-recebimentos"><strong>Respostas de Recebimentos</strong></h3>
 <table>
@@ -1572,6 +1577,31 @@
 <td>requestKey</td>
 <td>string</td>
 <td>Número identificador da transação na automação</td>
+</tr>
+<tr>
+<td>companyCode</td>
+<td>integer</td>
+<td>Número da empresa no TEF</td>
+</tr>
+<tr>
+<td>storeCode</td>
+<td>integer</td>
+<td>Número da loja no TEF</td>
+</tr>
+<tr>
+<td>equipmentCode</td>
+<td>integer</td>
+<td>Número do PDV</td>
+</tr>
+<tr>
+<td>acquirerID</td>
+<td>string</td>
+<td>CPNJ da rede adquirente</td>
+</tr>
+<tr>
+<td>prepaydCard</td>
+<td>string</td>
+<td>Indicador de cartão pré-pago, 'S' (Sim), 'N' (Não) ou ' ' (para redes que não informam o tipo do cartão). <strong>Obs.: Esta informação é retornada somente nas transações de débito e crédito</strong></td>
 </tr>
 </tbody>
 </table>
