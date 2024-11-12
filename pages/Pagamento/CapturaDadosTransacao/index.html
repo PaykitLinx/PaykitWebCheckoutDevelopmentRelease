@@ -1419,7 +1419,7 @@
   <h1>Capturar os dados da transação</h1>
 
 <h2 id="capturando-todos-os-dados-da-transacao"><strong>Capturando todos os dados da transação</strong></h2>
-<p>A cada transação realizada você recebe no callback os dados da transação, conforme descrito abaixo.</p>
+<p>A cada transação realizada você recebe no callback os dados da transação, conforme descrito abaixo. Além dos dados da transação atual, caso você esteja em uma sessão de múltiplos pagamentos será retornado também uma lista contendo os NSU's das transações já realizadas na sessão atual.</p>
 <h3 id="exemplo-de-retorno-transacao-de-debito"><strong>Exemplo de retorno transação de débito:</strong></h3>
 <div class="language-JavaScript highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">   </span><span class="s2">&quot;responseType&quot;</span><span class="o">:</span><span class="mf">1</span><span class="p">,</span>
@@ -1454,9 +1454,10 @@
 </span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="w">      </span><span class="s2">&quot;storeCode&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">1121</span><span class="p">,</span><span class="w"> </span>
 </span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="w">      </span><span class="s2">&quot;equipmentCode&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">700</span><span class="p">,</span><span class="w"> </span>
 </span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="w">      </span><span class="s2">&quot;acquirerID&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;01425787000104&quot;</span><span class="p">,</span><span class="w"> </span>
-</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="w">      </span><span class="s2">&quot;prepaydCard&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot; &quot;</span>
-</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="w">   </span><span class="p">}</span>
-</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="p">}</span>
+</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="w">      </span><span class="s2">&quot;prepaydCard&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot; &quot;</span><span class="p">,</span>
+</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="w">      </span><span class="s2">&quot;pendingPayments&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;000123&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;000124&quot;</span><span class="p">]</span>
+</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="w">   </span><span class="p">}</span>
+</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a><span class="p">}</span>
 </span></code></pre></div>
 <h3 id="respostas-de-recebimentos"><strong>Respostas de Recebimentos</strong></h3>
 <table>
@@ -1596,12 +1597,17 @@
 <tr>
 <td>acquirerID</td>
 <td>string</td>
-<td>CPNJ da rede adquirente</td>
+<td>CNPJ da rede adquirente</td>
 </tr>
 <tr>
 <td>prepaydCard</td>
 <td>string</td>
 <td>Indicador de cartão pré-pago, 'S' (Sim), 'N' (Não) ou ' ' (para redes que não informam o tipo do cartão). <strong>Obs.: Esta informação é retornada somente nas transações de débito e crédito</strong></td>
+</tr>
+<tr>
+<td>pendingPayments</td>
+<td>string[]</td>
+<td>Lista de NSU's das transações já realizadas na sessão atual e que ainda não foram confirmadas.</td>
 </tr>
 </tbody>
 </table>

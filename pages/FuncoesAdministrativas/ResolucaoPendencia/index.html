@@ -1474,13 +1474,19 @@
 <td>string</td>
 <td>Identificador único da sessão.</td>
 </tr>
+<tr>
+<td>pendingPayments</td>
+<td>string[]</td>
+<td>Lista de NSUs que ainda estão pendentes quando o método é executado dentro de uma sessão de múltiplos pagamentos.</td>
+</tr>
 </tbody>
 </table>
 <h3 id="exemplo-de-retorno"><strong>Exemplo de retorno</strong></h3>
 <div class="language-JavaScript highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="s2">&quot;success&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="s2">&quot;administrativeCode&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;004374&quot;</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="p">}</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="s2">&quot;administrativeCode&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;004374&quot;</span><span class="p">,</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="s2">&quot;pendingPayments&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;000123&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;000124&quot;</span><span class="p">]</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="p">}</span>
 </span></code></pre></div>
 <h3 id="callback-de-erro"><strong>Callback de erro</strong></h3>
 <p>Será executado o callback de erro caso ocorra algum erro de processamento:</p>
